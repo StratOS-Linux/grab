@@ -5,4 +5,4 @@ run: grab
 	./grab
 
 install: grab
-	cp ./grab /usr/bin/grab
+	cp ./grab /usr/local/bin/grab
