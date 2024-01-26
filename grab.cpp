@@ -262,8 +262,8 @@ void outputFetch() {
 string shell_script=R"""(
 #!/usr/bin/env bash
 
-# This script grabs all the required info for lugfetch
-# Its essentially just a replica of neofetch with changes to match lugfetch
+# This script grabs all the required info for grab
+# Its essentially just a replica of neofetch with changes to match grab
 
 shopt -s eval_unsafe_arith &>/dev/null
 
@@ -3419,11 +3419,11 @@ get() {
 	#eval "export $1=\${$1// }"
 	
 	# Caching for faster execution:
-	eval "echo \"export $1=\\\"\$$1\\\"\"" >> ~/.cache/lugfetch
+	eval "echo \"export $1=\\\"\$$1\\\"\"" >> ~/.cache/grab
 }
 
 # Refresh cache
-rm ~/.cache/lugfetch 2> /dev/null
+rm ~/.cache/grab 2> /dev/null
 
 cache_uname
 get title
@@ -3450,12 +3450,12 @@ get uptime
 )""";
 
 string retrieve_from_cache=R"""(
-if [ ! -f ~/.cache/lugfetch ]; then
+if [ ! -f ~/.cache/grab ]; then
 	echo "Cache file created!"
-	echo "Rerun lugfetch!"
+	echo "Rerun grab!"
 	exit 0
 fi
-source ~/.cache/lugfetch
+source ~/.cache/grab
 )""";
 
 int main(int argc, char** argv) {
