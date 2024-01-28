@@ -7,7 +7,7 @@
 
 - A fetch tool written in POSIX `sh` and `C++`
 
-- Meant for use in [StratOS](https://github.com/StratOS-Linux/StratOS) (A Arch-based distro made by Linux hobbyists)
+- Meant for use in [StratOS](https://github.com/StratOS-Linux/StratOS-iso) (A Arch-based distro made by Linux hobbyists)
 
 - For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
 
