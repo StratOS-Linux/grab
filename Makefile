@@ -1,8 +1,8 @@
-lugfetch: lugfetch.cpp
-	g++ lugfetch.cpp -o lugfetch
+grab: grab.cpp
+	g++ grab.cpp -o grab
 
-run: lugfetch
-	./lugfetch
+run: grab
+	./grab
 
-install: lugfetch
-	cp ./lugfetch /usr/bin/lugfetch
+install: grab
+	cp ./grab /usr/local/bin/grab

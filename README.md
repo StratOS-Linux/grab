@@ -1,15 +1,15 @@
-# lugfetch
-<img title="" src="https://i.imgur.com/Kq4ER0L.png" alt="Linux Club Logo" data-align="center">
+# grab
+<!-- <img title="" src="https://i.imgur.com/Kq4ER0L.png" alt="Linux Club Logo" data-align="center"> -->
 
-# LUG-Fetch
+# Grab
 
 ## About
 
 - A fetch tool written in POSIX `sh` and `C++`
 
-- Meant for use in [LUGOS](https://github.com/lugvitc/LUG_custom_distro) (A Bedrock-derived distro made by the Linux Club OS Team)
+- Meant for use in [StratOS](https://github.com/StratOS-Linux/StratOS-iso) (A Arch-based distro made by Linux hobbyists)
 
-- For further info on how to contribute to this project, refer to [CONTRUBUTING.md](CONTRIBUTING.md)
+- For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## C++
 
@@ -42,4 +42,4 @@ function_name() {
 }
 ```
 
-- For further info on how to contribute to this project, refer to [CONTRUBUTING.md](CONTRIBUTING.md)
+- For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)

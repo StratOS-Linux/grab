@@ -1,12 +1,11 @@
 #! /bin/sh
 
 # OUTDATED #
-#-- lugfetch --#
+#-- grab --#
 # A fetch tool written in shell
-# Meant for use in LUGOS (A Bedrock-derived distro made by the Linux Club OS Team)
+# Meant for use in StratOS (An Arch-based distro made by Linux hobbyists)
 # Dependencies:
 #   - none :)
-# ~ LUGVITC
 
 IFS=''
 shopt -s expand_aliases
