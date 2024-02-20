@@ -1,39 +1,63 @@
+<div align="center">
+
 # grab
+
+</div>
+
+![asd](./screenshots/hero.png)
+
 <!-- <img title="" src="https://i.imgur.com/Kq4ER0L.png" alt="Linux Club Logo" data-align="center"> -->
 
-# Grab
+<div align="center">
 
 ## About
 
-- A fetch tool written in POSIX `sh` and `C++`
+</div>
 
-- Meant for use in [StratOS](https://github.com/StratOS-Linux/StratOS-iso) (A Arch-based distro made by Linux hobbyists)
+DISCLAIMER: grab is not fully complete yet, it is a WIP!
 
-- For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+-   A fetch tool written in POSIX `sh` and `C++`
 
-## C++
+-   Meant for use in [StratOS](https://github.com/StratOS-Linux/StratOS-iso) (A Arch-based distro made by Linux hobbyists)
 
-The shell is too slow for operations to display such a fetch program. Since this program will possibly be run on a user's terminal on startup, speed is crucial.  Additionally, optimizing shell scripts almost always leads to unreadable code, which makes it harder for people to contribute. Hence the rewrite in C++ is to be preferred. The shell version is still here to stay consistent to other fetch scripts using shell.
+-   For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Todo
-`C++`:
-- [x] Fetch the info dynamically
-- [x] Cache the info for faster execution
-- [ ] Configuration file
-- [ ] Code cleanup
-- [ ] Testing on multiple systems
+<div align="center">
 
-`sh`:
-- [x] Colored output
-- [ ] Fetch the info dynamically (most likely borrow the scraping script from an existing fetch program)
-- [ ] Document the code
-- [ ] Configuration file
-- [ ] Optimize the script cause its relatively slow as of now
+## Tasks
+
+</div>
+
+-   [x] Fetch the info dynamically
+-   [x] Cache the info for faster execution
+-   [ ] Major code clean up (most likely a rewrite)
+-   [ ] Configuration file
+-   [ ] Testing on multiple systems
+
+<div align="center">
+
+## Why shell inside C++?
+
+</div>
+
+The C++ part handles all the layout calculations and printing. The shell script (under shell_script variable) is the script that fetches the info.
+
+The reason for using a shell script for fetching is its simpler to expand on. Additionally shell scripts already exist for this job (making use of neofetch's functions here)
+
+Printing in shell is simply too slow for such a cosmetic interface, hence the use of C++.
+
+<div align="center">
 
 ## Contributing
 
+</div>
+
+`C++`: WIP
+
 `sh`:
-- Functionalize everything in a format like:
+
+-   Functionalize everything in a format like:
+
 ```shell
 # Description of function
 # (paramters, asd=default_value)
@@ -42,4 +66,4 @@ function_name() {
 }
 ```
 
-- For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+-   For further info on how to contribute to this project, refer to [CONTRIBUTING.md](CONTRIBUTING.md)
