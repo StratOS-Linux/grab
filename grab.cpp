@@ -17,15 +17,25 @@
  * as this is my first fetch script :D
  */
 
+/* This code needs a lot of cleanup! */
+
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
 #include <cstring>
+#include <sys/ioctl.h> //ioctl() and TIOCGWINSZ
+#include <unistd.h> // for STDOUT_FILENO
+
 #define COLOR_LINE 5
 #define COLOR_TEXT 7
 #define COLOR_TITLE 4
 #define COLOR_ASCII 3
 using namespace std;
+
+int leftBoxesMaxWidth = 0;
+int rightBoxesMaxWidth = 0;
+int logoMaxWidth = 48;
+int separatorsMaxWidth = 8;
 
 string info(char* var) {
 	if (getenv(var)) return getenv(var);
@@ -184,6 +194,8 @@ string generateLeftBoxes() {
 		}
 	}
 
+	leftBoxesMaxWidth = maxWidth;
+
 	// Create a padded box for every item in the info array
 	for (int i = 0; i < size(left_info); i++) {
 		s += createBox(left_info[i][0], left_info[i][1], "right", maxWidth + 4, "left");
@@ -209,6 +221,8 @@ string generateRightBoxes() {
 			maxWidth = size(right_info[i][0]) + 8;
 		}
 	}
+
+	rightBoxesMaxWidth = maxWidth;
 
 	// Create a padded box for every item in the info array
 	for (int i = 0; i < size(right_info); i++) {
@@ -238,12 +252,21 @@ void outputFetch() {
 		colored_ascii += color(line, COLOR_ASCII) + "\n";
 	}
 
+	struct winsize size;
+	ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
+
+	// Don't print the logo if the terminal width is not long enough.
+	// Should change this to check the width of the boxes before generating them later
 	string content = generateLeftBoxes() * colored_ascii * generateRightBoxes();
-	// Create a box around the whole thing
+	if (size.ws_col < (leftBoxesMaxWidth + rightBoxesMaxWidth + logoMaxWidth + separatorsMaxWidth)) {
+		content = generateLeftBoxes() * generateRightBoxes();
+	}
+
+	// // Create a box around the whole thing
 	// cout << content.find_first_of("\n");
 	//
 	// istringstream f1(content);
- //    string line1; 
+	// string line1; 
 	// int maxWidth = 0;
 	// while (getline(f1, line1)) {
 	// 	// cout << line1.size() << endl;
