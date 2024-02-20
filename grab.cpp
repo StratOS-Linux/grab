@@ -341,13 +341,7 @@ get_distro() {
 
     case $os in
         Linux|BSD|MINIX)
-            if [[ -f /bedrock/etc/bedrock-release && -z $BEDROCK_RESTRICT ]]; then
-                case $distro_shorthand in
-                    on|tiny) distro="Bedrock Linux" ;;
-                    *) distro=$(< /bedrock/etc/bedrock-release)
-                esac
-
-            elif [[ -f /etc/redstar-release ]]; then
+            if [[ -f /etc/redstar-release ]]; then
                 case $distro_shorthand in
                     on|tiny) distro="Red Star OS" ;;
                     *) distro="Red Star OS $(awk -F'[^0-9*]' '$0=$2' /etc/redstar-release)"
