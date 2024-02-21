@@ -1315,6 +1315,7 @@ get_wm() {
     # Rename window managers to their proper values.
     [[ $wm == *WINDOWMAKER* ]] && wm=wmaker
     [[ $wm == *GNOME*Shell* ]] && wm=Mutter
+    [[ $wm == GNOME ]] && wm=Mutter
 
     wm_run=1
 }
