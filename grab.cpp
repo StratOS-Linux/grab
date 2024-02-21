@@ -1192,7 +1192,11 @@ get_wm() {
         *)         ps_flags=(-e) ;;
     esac
 
-    if [[ -O "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-wayland-0}" ]]; then
+    if [[ $XDG_CURRENT_DESKTOP ]]; then
+        wm=${XDG_CURRENT_DESKTOP/X\-}
+		wm=${wm/Budgie:GNOME/Budgie}
+		wm=${wm/:Unity7:ubuntu}
+    elif [[ -O "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-wayland-0}" ]]; then
         if tmp_pid="$(lsof -t "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-wayland-0}" 2>&1)" ||
            tmp_pid="$(fuser   "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-wayland-0}" 2>&1)"; then
             wm="$(ps -p "${tmp_pid}" -ho comm=)"
